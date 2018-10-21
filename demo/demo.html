@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <span id="span">Click</span>
+  <script>
+    var $span = document.querySelector('#span')
+    function handle (e) {
+      console.log(e.type)
+      this.removeEventListener('click', handle)
+      console.log(1, e.target.nodeName)
+    }
+    $span.addEventListener('click', () => {
+      console.log(this)
+    })
+  </script>
+</body>
+</html>
